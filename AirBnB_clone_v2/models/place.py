@@ -36,7 +36,7 @@ class Place(BaseModel, Base):
                                      String(60),
                                      ForeignKey('amenities.id'),
                                      primary_key=True, nullable=False))
-        amenities('Amenity', secondary=place_amenity, viewonly=False)
+        amenities = relationship('Amenity', secondary=place_amenity, viewonly=False)
     else:
         city_id = ""
         user_id = ""
